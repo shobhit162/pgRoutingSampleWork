@@ -28,27 +28,27 @@ int main(int, char*[])
     typedef graph_traits< Graph >::vertices_size_type size_type;
 
     typedef std::pair< std::size_t, std::size_t > Pair;
-    Pair edges[19] = { Pair(0, 1), 
-        Pair(1, 4), 
-        Pair(1, 2), 
-        Pair(4, 7), 
-        Pair(4, 5), 
-        Pair(4, 9), 
-        Pair(7, 6), 
-        Pair(5, 2), 
-        Pair(5, 8),
-        Pair(5, 10),
-        Pair(2, 3),
-        Pair(3, 8), 
-        Pair(8, 11),
-        Pair(10, 9),
-        Pair(10, 11),
-        Pair(9, 14),
-        Pair(14, 13),
-        Pair(14, 12),
-        Pair(16, 15),
+    Pair edges[19] = { Pair(1, 2), // a-d
+        Pair(2, 5), // a-f
+        Pair(2, 3), // b-c // b-ePair(7, 8)
+        Pair(5, 8), // b-g
+        Pair(5, 6), // b-j
+        Pair(5, 10), // c-d
+        Pair(8, 7), // c-e
+        Pair(6, 3), // d-f
+        Pair(6, 9), // d-i
+        Pair(6, 11), // e-g
+        Pair(3, 4), // f-g
+        Pair(4, 9), // f-h
+        Pair(9, 12),
+        Pair(11, 10),
+        Pair(11, 12),
+        Pair(10, 15),
+        Pair(15, 14),
+        Pair(15, 13),
+        Pair(17, 16),
     
-         }; 
+         }; // g-h,Pair(7, 8)
 
     Graph G(16);
     for (int i = 0; i < 19; ++i)
@@ -68,7 +68,7 @@ int main(int, char*[])
     std::vector< Vertex > inv_perm(num_vertices(G));
     std::vector< size_type > perm(num_vertices(G));
     {
-        Vertex s = vertex(15, G);
+        Vertex s = vertex(16, G);
         // reverse cuthill_mckee_ordering
         cuthill_mckee_ordering(G, s, inv_perm.rbegin(), get(vertex_color, G),
             get(vertex_degree, G));
@@ -88,7 +88,7 @@ int main(int, char*[])
                   << std::endl;
     }
     {
-        Vertex s = vertex(0, G);
+        Vertex s = vertex(1, G);
         // reverse cuthill_mckee_ordering
         cuthill_mckee_ordering(G, s, inv_perm.rbegin(), get(vertex_color, G),
             get(vertex_degree, G));
