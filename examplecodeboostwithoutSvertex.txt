@@ -1,0 +1,3 @@
+Reverse Cuthill-McKee ordering:
+  0 1 15 2 10 14 3 9 11 13 4 8 12 5 7 6 
+  bandwidth: 4
