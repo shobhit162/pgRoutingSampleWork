@@ -28,18 +28,18 @@ int main(int, char*[])
     typedef graph_traits< Graph >::vertices_size_type size_type;
 
     typedef std::pair< std::size_t, std::size_t > Pair;
-    Pair edges[19] = { Pair(1, 2), // a-d
-        Pair(2, 5), // a-f
-        Pair(2, 3), // b-c // b-ePair(7, 8)
-        Pair(5, 8), // b-g
-        Pair(5, 6), // b-j
-        Pair(5, 10), // c-d
-        Pair(8, 7), // c-e
-        Pair(6, 3), // d-f
-        Pair(6, 9), // d-i
-        Pair(6, 11), // e-g
-        Pair(3, 4), // f-g
-        Pair(4, 9), // f-h
+    Pair edges[19] = { Pair(1, 2), 
+        Pair(2, 5), 
+        Pair(2, 3), 
+        Pair(5, 8), 
+        Pair(5, 6), 
+        Pair(5, 10), 
+        Pair(8, 7),
+        Pair(6, 3),
+        Pair(6, 9), 
+        Pair(6, 11), 
+        Pair(3, 4), 
+        Pair(4, 9), 
         Pair(9, 12),
         Pair(11, 10),
         Pair(11, 12),
@@ -48,7 +48,7 @@ int main(int, char*[])
         Pair(15, 13),
         Pair(17, 16),
     
-         }; // g-h,Pair(7, 8)
+         }; 
 
     Graph G(16);
     for (int i = 0; i < 19; ++i)
