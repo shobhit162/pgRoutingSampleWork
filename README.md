@@ -1,8 +1,5 @@
 # pgRoutingSampleWork
 
-Initial Graph
-
-
 
 Before Cuthill-Mckee ordering
 
